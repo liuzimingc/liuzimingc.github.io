@@ -1,0 +1,228 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>非常厉害的 NOI Linux | 文末千年一遇的🐟大放送 | liuzimingc&#39;s inner world</title>
+<link rel="shortcut icon" href="https://liuzimingc.github.io/favicon.ico?v=1719719103291">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liuzimingc.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="非常厉害的 NOI Linux | 文末千年一遇的🐟大放送 | liuzimingc&#39;s inner world - Atom Feed" href="https://liuzimingc.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="尝试取一个抽象标题。
+
+绝对路径：形如 ~/下载/code；相对路径：形如 ./1.cpp。
+相对路径顾名思义就是相对的，假设当前是 ~/下载/code，那么其 ./1.cpp 就是 ~/下载/code/1.cpp。What does . ..." />
+    <meta name="keywords" content="OI" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://liuzimingc.github.io">
+  <img class="avatar" src="https://liuzimingc.github.io/images/avatar.png?v=1719719103291" alt="">
+  </a>
+  <h1 class="site-title">
+    liuzimingc&#39;s inner world
+  </h1>
+  <p class="site-description">
+    You will never live if you are looking for the meaning of life.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/liuzimingc" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/liuzimingc" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              非常厉害的 NOI Linux | 文末千年一遇的🐟大放送
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-03-02
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://liuzimingc.github.io/tag/-ob2jofXE/" class="post-tag">
+                  # OI
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://liuzimingc.github.io/post-images/linux-and-fish.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>尝试取一个抽象标题。</p>
+<!-- more -->
+<p>绝对路径：形如 <code>~/下载/code</code>；相对路径：形如 <code>./1.cpp</code>。</p>
+<p>相对路径顾名思义就是相对的，假设当前是 <code>~/下载/code</code>，那么其 <code>./1.cpp</code> 就是 <code>~/下载/code/1.cpp</code>。<s>What does . refer to?</s></p>
+<p>然后就是非常有用的终端命令！Ctrl + Alt + T 唤出终端。</p>
+<ul>
+<li><code>cd</code> 可以接绝对路径也可以接相对路径。如果写 <code>cd ..</code> 即返回上一级，假设当前是 <code>~/下载/code</code>，执行 <code>cd ..</code> 后就是 <code>~/下载</code>。<code>cd -</code> 则切换到上一次的目录命令。change directory。</li>
+<li><code>mkdir</code> 新建文件夹，如 <code>mkdir fuck</code>。make directory。</li>
+<li><code>ls</code> 列出当前所在位置的所有文件。<code>ls --help</code> 各种各样的命令。list。</li>
+<li><code>touch</code>  新建文件，如 <code>touch 1.cpp</code>。不是很懂为什么是 touch。</li>
+<li><code>cat</code> 显示文件内容，如 <code>cat 1.cpp</code>。concatenate。</li>
+<li><code>clear</code> 清屏。</li>
+<li><code>ulimit</code> 如 <code>ulimit -s unlimited</code> 就是开无限栈。每次都会重置，所以每次都要输。（输入 <code>ulimit -s 0</code> 可以导致神秘东西。）</li>
+<li><code>g++</code> 美丽的编译。使用 <code>g++ -std=c++14 -O2 -Wall 1.cpp -o 1</code> 可以从 <code>1.cpp</code> 编译出 <code>1</code> 可执行文件。</li>
+<li><code>pwd</code> 显示当前路径。print working directory。</li>
+<li><code>diff</code> 比较文件。如 <code>diff 1.out 1.ans</code>。</li>
+</ul>
+<p>如果要运行一个可执行文件的话，Linux 下可执行文件没有后缀 exe，如运行<strong>当前路径下</strong> <code>1</code> 这个可执行文件直接 <code>./1</code> 即可。</p>
+<p>VS Code 终端是 Ctrl + `（经帅气罗阿姨指正🤔），用法一样，注意路径。</p>
+<p>最后一些杂项。</p>
+<ul>
+<li>Firefox 新建标签页 Ctrl + T。</li>
+<li>调中文输入法右上角，然后 Shift 切中英文。</li>
+<li>按 Tab 可以自动补全文件名。</li>
+</ul>
+<hr>
+<p>兽人一与不如守仁一与。<a href="https://www.hostinger.com/tutorials/linux-commands">Top 60 Essential Linux Commands</a>。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://liuzimingc.github.io/post/acgtu/">
+              <h3 class="post-title">
+                ACGTU 碱基的英文相关
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1246b2ab9d24b0d1609e',
+    clientSecret: 'ff052bad755e0dcb31ba0a4063472bbfea6efe01',
+    repo: 'liuzimingc.github.io',
+    owner: 'liuzimingc',
+    admin: ['liuzimingc'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Wish you happy everyday~
+  <a class="rss" href="https://liuzimingc.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
