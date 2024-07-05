@@ -1,0 +1,339 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adventure of Ruby | liuzimingc&#39;s inner world</title>
+<link rel="shortcut icon" href="https://liuzimingc.github.io/favicon.ico?v=1720194124249">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liuzimingc.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Adventure of Ruby | liuzimingc&#39;s inner world - Atom Feed" href="https://liuzimingc.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Embark on a thrilling adventure of Ruby with Little A and Little C (and another person)!
+
+Journey.start_with(objects)
+Li..." />
+    <meta name="keywords" content="Ruby" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://liuzimingc.github.io">
+  <img class="avatar" src="https://liuzimingc.github.io/images/avatar.png?v=1720194124249" alt="">
+  </a>
+  <h1 class="site-title">
+    liuzimingc&#39;s inner world
+  </h1>
+  <p class="site-description">
+    You will never live if you are looking for the meaning of life.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/liuzimingc" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/liuzimingc" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Adventure of Ruby
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-06-30
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://liuzimingc.github.io/tag/ZJfBkoecl/" class="post-tag">
+                  # Ruby
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>Embark on a thrilling adventure of Ruby with Little A and Little C (and another person)!</p>
+<!-- more -->
+<h2 id="journeystart_withobjects">Journey.start_with(objects)</h2>
+<p>Little A and Little C want to create a programming language. They like Both Ruby and English, so they decide that the language will be called <strong>Ruby</strong>.</p>
+<p>They say it should be as much like the real life as possible, so in Ruby, everything is an item, or let's call it <strong>object</strong>.</p>
+<blockquote>
+<p>Almost everything in Ruby is an object.</p>
+</blockquote>
+<p>Little A doesn't know what <code>self</code> is supposed to mean. Little C says, &quot;Let's say it represents the object you're operating on right now!&quot; So the following code represents <code>main</code>, namely the main function:</p>
+<pre><code class="language-ruby">self
+</code></pre>
+<p>So far, it can only represent objects, and Little C is not happy with that, because they still need to manipulate an object. They decide to use something they call <strong>method</strong> to interact with it. An object's method is its internal property, so they decided to use <code>.</code> to call an object's &quot;internal&quot; methods.</p>
+<p>&quot;What's 1's next number?&quot;</p>
+<p>&quot;2, of course.&quot;</p>
+<p>&quot;In Ruby, we do the same!&quot;</p>
+<pre><code class="language-ruby">1.next
+</code></pre>
+<p>The code above represents 2.</p>
+<p>Then how to check if a number is even? Little A says it would be <code>1.next.even</code>, but Little C doesn't think it clear enough. By adding <code>?</code>, he makes it much clearer.</p>
+<pre><code class="language-ruby">1.next.even? # &quot;?&quot; represents a question
+</code></pre>
+<p>Objects are friendly! They are happy to tell you what methods they provide by simply calling the <code>methods</code> method on them.</p>
+<pre><code class="language-ruby">1.methods
+</code></pre>
+<p>And <code>methods</code> is a method too, so Little A does this:</p>
+<pre><code class="language-ruby">1.methods.methods
+</code></pre>
+<p>Little A and Little C are satisfied. But a new question comes: how to do math? Following the same recipe, we get this:</p>
+<pre><code class="language-ruby">1.+(2)
+</code></pre>
+<p>Too weird. Thanks to Little A who makes something special, you could simply code like this:</p>
+<pre><code class="language-ruby">1 + 2 # this is same as 1.+(2) 
+</code></pre>
+<blockquote>
+<p>Ruby makes an exception in its syntactic rules for commonly used operators so you don't have to use periods to invoke them on objects.</p>
+</blockquote>
+<h2 id="puts-name-loves-ruby">puts '#{name} loves Ruby.'</h2>
+<p>Now they want to make a brief self-introduction in Ruby. Something must be used to restore thier names, which is called a <strong>variable</strong>. And also, their names are just <strong>strings</strong>. Strings are usually like<code>'...'</code> or <code>&quot;...&quot;</code>.</p>
+<p>Example:</p>
+<pre><code class="language-ruby">name = 'Little C' # we use &quot;a = b&quot; to assign b to a
+</code></pre>
+<p>They want to output it. Here's the solution.</p>
+<pre><code class="language-ruby">name = 'Little C'
+puts name
+</code></pre>
+<p>A piece of cake, itsn't it? But what if Little A wants to add some additional information? Liitle C helps him figure out the problem by using <strong>string interpolation</strong>.</p>
+<pre><code class="language-ruby">name = 'Little C'
+friend = 'Little A'
+puts 'My name is #{name}.'
+puts 'I helped #{friend}.'
+</code></pre>
+<p>Note that there is a line break after each output when <code>puts</code> is used. And they create more operations about strings... Let's take a look.</p>
+<ul>
+<li><code>a.include?(b)</code> checks if string <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> contains string <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>.</li>
+<li><code>a.start_with?(b)</code> checks if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> starts with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>.</li>
+<li><code>a.end_with?(b)</code> checks if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> ends with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>.</li>
+<li><code>a.index(b)</code> gets the earliest occurrence of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>. It is empty if it does not exist.</li>
+<li><code>a.upcase</code> gets the result of converting <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> to uppercase.</li>
+<li><code>a.swapcase</code> gets the result of swapping the case of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>.</li>
+<li><code>a.split(b)</code> splits <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> by <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>.</li>
+<li><code>a + b</code> &amp; <code>a.concat(b)</code> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> concatenates <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, creating a new string, which is less efficient.</li>
+<li><code>a &lt;&lt; b</code> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> concatenates <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, adding <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> directly after <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>.</li>
+<li><code>a.sub(b, c)</code> Replaces the first <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>.</li>
+<li><code>a.sub(regex, b)</code> Same as above, match replaced by <a href="https://www.cnblogs.com/liuzimingc/p/18008730/regex">regular expression</a>.</li>
+<li><code>a.gsub(b, c)</code> Replaces all <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>'s in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> (global).</li>
+<li><code>a.match(regex)</code> Finds the first string in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> that matches the regex.</li>
+<li><code>a.match(regex, pos)</code> Finds the first string in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> that matches the regex, starting at the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>o</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">pos</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span></span></span></span> position.</li>
+</ul>
+<blockquote>
+<p>A regular expression sometimes referred to as rational expression, is a sequence of characters that specifies a match pattern in text.</p>
+</blockquote>
+<p>That explains how much they like English.</p>
+<h2 id="you_enjoy_yourself-true">You_enjoy_yourself == true</h2>
+<p>Little A forgets the value of the varible <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">name</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span></span></span>. He wants to check if it equals <code>'Little A</code>'. In this case, Little A uses <code>==</code>.</p>
+<pre><code class="language-ruby">name = 'Little C'
+puts name == 'Little A'
+</code></pre>
+<p>Obviously, the output is <code>false</code>. If we change <code>A</code> into <code>C</code>, then we can get <code>true</code>.</p>
+<p>The other usual operators like greater than (&gt;), less than (&lt;), greater than or equal to (&gt;=) etc. are supported.</p>
+<p>Little A isn't smart enough, he wants to combine the boolean expressions but doesn't know how to do with it. Little C helps him by using <code>&amp;&amp;</code> and <code>||</code>.</p>
+<p><code>A &amp;&amp; B == true</code> holds when A and B are both true. <code>A || B == true</code> holds when one or more of A and B is true. <code>!A</code> is false when A is true; <code>!A</code> is true when A is false.</p>
+<h2 id="if-you-like-me-i-like-you-otherwise-i-dont-like-you">If you like me, I like you; otherwise, I don't like you</h2>
+<p>Little A finds he can't help falling love with Little C, so he asks Little C whether Little C loves him. That's how Little C responds.</p>
+<pre><code class="language-ruby">if you_like_me
+	I_like_you = true
+else
+	I_like_you = false
+end
+</code></pre>
+<p>Of course, the code fails to run since varible <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mi>o</mi><mi>u</mi><mi mathvariant="normal">_</mi><mi>l</mi><mi>i</mi><mi>k</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">you\_like\_me</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span></span></span>  is undefined. That depends on Little A's attitude towards Little C then! But let's now talk about the if-else construct:</p>
+<pre><code class="language-ruby">if (conditional-expression)  
+  # code if condition is true  
+else   
+  # code if condition is false  
+end 
+</code></pre>
+<p>&quot;How about this?&quot; Little A codes:</p>
+<pre><code class="language-ruby">how_much_I_like_you = 100
+if (how_much_I_like_you == 100)
+	puts &quot;I like you to my bones.&quot;
+elsif (how_much_I_like_you &gt;= 60)
+	puts &quot;I kinda like you.&quot;
+else
+	puts &quot;I'm not that into you.&quot;
+end
+</code></pre>
+<p>Little C changes <code>how_much_I_like_you = 100</code> into <code>how_much_I_like_you = 114514</code>. Both of them laugh. The if-elsif-else construct:</p>
+<pre><code class="language-ruby">if (condition-expression1)   
+  # code if above condition is true  
+elsif (condition-expression2)  
+  # code if above condition is true  
+elsif (condition-expression3)   
+  # code if above condition is true  
+...  
+else   
+  # code if all the conditions are false  
+end  
+</code></pre>
+<p>It's easy unless you have learnt about &quot;unless&quot; construct! That's actually simple.</p>
+<pre><code class="language-ruby">unless you_like_me # = if not
+	puts &quot;I don't like you, either!&quot;
+end
+</code></pre>
+<p>Fun facts:  the objects <code>false</code> and <code>nil</code> equates to false. Every other object like say <code>1</code>, <code>0</code>, <code>&quot;&quot;</code> are all evaluated to be true.</p>
+<pre><code class="language-ruby">if 0
+  puts &quot;Hey, 0 is considered to be a truth in Ruby&quot; 
+end
+</code></pre>
+<h2 id="loop-do-puts-i-love-you-end">loop do puts &quot;I love you&quot; end</h2>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#journeystart_withobjects">Journey.start_with(objects)</a></li>
+<li><a href="#puts-name-loves-ruby">puts '#{name} loves Ruby.'</a></li>
+<li><a href="#you_enjoy_yourself-true">You_enjoy_yourself == true</a></li>
+<li><a href="#if-you-like-me-i-like-you-otherwise-i-dont-like-you">If you like me, I like you; otherwise, I don't like you</a></li>
+<li><a href="#loop-do-puts-i-love-you-end">loop do puts &quot;I love you&quot; end</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://liuzimingc.github.io/post/number/">
+              <h3 class="post-title">
+                法语数字，但不完全是数字
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1246b2ab9d24b0d1609e',
+    clientSecret: 'ff052bad755e0dcb31ba0a4063472bbfea6efe01',
+    repo: 'liuzimingc.github.io',
+    owner: 'liuzimingc',
+    admin: ['liuzimingc'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Wish you happy everyday~
+  <a class="rss" href="https://liuzimingc.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
