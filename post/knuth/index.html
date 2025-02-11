@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于 Knuth 表示法的一点思考 | liuzimingc&#39;s inner world</title>
+<link rel="shortcut icon" href="https://liuzimingc.github.io/favicon.ico?v=1739282233349">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liuzimingc.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于 Knuth 表示法的一点思考 | liuzimingc&#39;s inner world - Atom Feed" href="https://liuzimingc.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="考试的时候做到这个题就很感兴趣，是 T2 还是 T3 来着，然后因为读错题意没 A。
+
+首先这个玩意本身就是表示的 102n,n∈R10 ^ {2 ^ n}, n \in \R102n,n∈R。很显然因为 2n2 ^ n2n 相加可以表示任..." />
+    <meta name="keywords" content="fun language" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://liuzimingc.github.io">
+  <img class="avatar" src="https://liuzimingc.github.io/images/avatar.png?v=1739282233349" alt="">
+  </a>
+  <h1 class="site-title">
+    liuzimingc&#39;s inner world
+  </h1>
+  <p class="site-description">
+    You will never live if you are looking for the meaning of life.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/liuzimingc" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/liuzimingc" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于 Knuth 表示法的一点思考
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-03-02
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://liuzimingc.github.io/tag/1FQ-MaM7q/" class="post-tag">
+                  # fun language
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://liuzimingc.github.io/post-images/knuth.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><s>考试的时候做到这个题就很感兴趣，是 T2 还是 T3 来着，然后因为读错题意没 A。</s></p>
+<!-- more -->
+<p>首先这个玩意本身就是表示的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><msup><mn>2</mn><mi>n</mi></msup></msup><mo separator="true">,</mo><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">10 ^ {2 ^ n}, n \in \R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07442em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.87998em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7385428571428572em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span>。很显然因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2 ^ n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span> 相加可以表示任意正整数，同理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><msup><mn>2</mn><mi>n</mi></msup></msup></mrow><annotation encoding="application/x-tex">10 ^ {2 ^ n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.87998em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.87998em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7385428571428572em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> 也可以。</p>
+<p>然后我们看看表示法本身。</p>
+<p>one，ten，one hundred 不用说，就是英文 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">10 ^ 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">10 ^ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">10 ^ 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>。</p>
+<p>从 myriad 开始，<s>乍一看以为金字塔</s>，其实意思是 countless / thousand，那么明显取的是后者。</p>
+<p>接着 myllion，byllion，分别从 million，billion 来的。此外 bi- 表 2，其意自现。e.g. bisexual。</p>
+<p>tryllion，tri- 表 3，如世界语中 tri 即为 3，英语中 three 即为 3。e.g. triangle。</p>
+<p>quadryllion，quadri- 表 4，如英语 quarter 为四分之一，法语 quatre 即为 4。</p>
+<p>quintyllion，其实英语就有 quintillion，最可能是直接从这里来的。</p>
+<p>sextyllion，<s>妈的</s>英语又有了 sextillion。当然 six 6 很明显。</p>
+<p>septyllion，初看非常容易让人想到 September 九月，但是这里强调的是 7，原因 Ruby 上课好像提过，如 Septwolves 七匹狼，因为古罗马历法原来只有十个月，后来加了两个月，排在了一月、二月，于是原来的月份相应后延。而且法语的 7 也就是 sept。</p>
+<p>octyllion ditto。</p>
+<p>nonyllion，呃呃，理论上也有对应的词。这也太无趣了！而且由于可恶的元音大挪移，noni 和 nine 只能说比较像吧。</p>
+<details>虽然我也不是很确定是不是元音大挪移导致的，但是应该没问题？？？如果有问题🙏在评论区喷死我即可。</details>
+<p>最后终于是 decyllion 了。我们有一个 decade 表示十年，以及世界语的 dek 即 10。</p>
+<p>鲜花：以及注意到大部分都以 -y 结尾，tri-，quatri- 等都被改成了 try，quatry，应该是为了形式统一。而且有一个 -llion 的后缀，应该是直接从 million，billion 拿过来的，至于 origin 好像并没有查到。。。<s>ChatGPT 没 ** 用不了。</s></p>
+<p>超鲜鲜花：我绝对不是墨玉写的这篇 Essay，我是搬的！！！</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1246b2ab9d24b0d1609e',
+    clientSecret: 'ff052bad755e0dcb31ba0a4063472bbfea6efe01',
+    repo: 'liuzimingc.github.io',
+    owner: 'liuzimingc',
+    admin: ['liuzimingc'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Wish you happy every day~
+  <a class="rss" href="https://liuzimingc.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
