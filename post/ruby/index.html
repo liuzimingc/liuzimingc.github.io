@@ -1,0 +1,472 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ruby 学习笔记 | liuzimingc&#39;s inner world</title>
+<link rel="shortcut icon" href="https://liuzimingc.github.io/favicon.ico?v=1757150401923">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liuzimingc.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Ruby 学习笔记 | liuzimingc&#39;s inner world - Atom Feed" href="https://liuzimingc.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Based on RubyMonk。
+因为神秘原因网站挂掉了，所以弄一下，顺便捡起已经生锈的 Ruby。
+
+推荐的在线编译器：Link。
+闲话：这样的话肯定 interaction 会少，可以多手动运行一下代码。以及有些代码可能会调整，但语..." />
+    <meta name="keywords" content="Ruby" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://liuzimingc.github.io">
+  <img class="avatar" src="https://liuzimingc.github.io/images/avatar.png?v=1757150401923" alt="">
+  </a>
+  <h1 class="site-title">
+    liuzimingc&#39;s inner world
+  </h1>
+  <p class="site-description">
+    You will never live if you are looking for the meaning of life.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="https://liuzimingc.github.io/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/liuzimingc" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/liuzimingc" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Ruby 学习笔记
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-03-02
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://liuzimingc.github.io/tag/ZJfBkoecl/" class="post-tag">
+                  # Ruby
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://liuzimingc.github.io/post-images/ruby.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Based on <a href="https://rubymonk.com/">RubyMonk</a>。</p>
+<p>因为神秘原因网站挂掉了，所以弄一下，顺便捡起已经生锈的 Ruby。</p>
+<!-- more -->
+<p>推荐的在线编译器：<a href="https://onecompiler.com/ruby/">Link</a>。</p>
+<p>闲话：这样的话肯定 interaction 会少，可以多手动运行一下代码。以及有些代码可能会调整，但语法内容是一样的。以及本来想用英语写的，因为 Ruby 真的很 English，算了还是用中文吧。</p>
+<h2 id="introduction-to-ruby-objects">Introduction To Ruby Objects</h2>
+<h3 id="introduction-to-objects">Introduction to Objects</h3>
+<p>Ruby 的特性，（几乎）万物皆对象。<code>self</code> 即 <code>main</code>，是对象。</p>
+<p><code>1.next</code> 为 <code>2</code>，也是个对象。</p>
+<h3 id="more-objects-and-methods">More Objects and Methods</h3>
+<p>在面向对象编程中，method 方法是对象的一部分。方法允许对象执行一个动作。</p>
+<p><code>1.methods</code> 就是 <code>1</code> 的所有方法，即可以执行的动作。</p>
+<p>但是方法也是对象（？），所以 <code>1.methods.methods</code> 就是 <code>1</code> 的所有方法的方法。注意到里面有 <code>sort</code>。意味着我们可以对其排序：<code>1.methods.sort</code>。</p>
+<p>更多例子：</p>
+<p><code>['rock', 'paper', 'scissors'].index('paper')</code> 查找 <code>'paper'</code> 在列表中的下标，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 开始。</p>
+<p><code>2.between?(1, 3)</code> 检查 <code>2</code> 是否在 <code>1</code> 和 <code>3</code> 的中间。</p>
+<h3 id="syntactic-sugar-for-special-methods">Syntactic Sugar for Special Methods</h3>
+<p>猜猜 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1 + 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 怎么写？<code>1.+(2)</code>。显然太反人类了，所以有语法糖。Ruby 在其语法规则中对常用运算符做了例外处理，因此不必使用句点在对象上调用它们，直接写 <code>1 + 2</code> 即可。</p>
+<h2 id="introduction-to-strings">Introduction to Strings</h2>
+<h3 id="introduction-to-strings-2">Introduction to Strings</h3>
+<p>类似于 Python，单双引号都可以，基本等价。</p>
+<p>字符串长度类似 C++，<code>s.length</code> 就是 <code>s</code> 字符串的长度。</p>
+<h3 id="string-basics">String Basics</h3>
+<p>字符串插值，用于字符串格式化输出，即 <code>#{string_name}</code>。</p>
+<pre><code class="language-ruby">name = &quot;liuzimingc&quot;
+puts &quot;My name is #{name}.&quot;
+</code></pre>
+<p>输出 <code>My name is liuzimingc. </code>。</p>
+<p>单双引号的一个小区别，<code>&quot;\n&quot;</code> 是换行，<code>'\n'</code> 是普通的 <code>\n</code> 字符串。</p>
+<p>一些方法：</p>
+<ul>
+<li><code>a.include?(b)</code> 检查 a 中是否包含 b。</li>
+<li><code>a.start_with?(b)</code> 检查 a 是否以 b 。</li>
+<li><code>a.end_with?(b)</code> 检查 a 是否以 b 结尾。</li>
+<li><code>a.index(b)</code> 得到 a 中 b 的最早出现位置。不存在则为空。</li>
+<li><code>a.upcase</code> 得到 a 全转大写的结果。</li>
+<li><code>a.swapcase</code> 得到 a 大小写互换的结果。</li>
+</ul>
+<h3 id="advanced-string-operations">Advanced String Operations</h3>
+<ul>
+<li><code>a.split(b)</code> 把 a 按 b 分隔开。</li>
+<li><code>a + b</code> &amp; <code>a.concat(b)</code> a 连接 b，生成了新的字符串，效率较低。</li>
+<li><code>a &lt;&lt; b</code> a 连接 b，直接把 b 加在了 a 之后。</li>
+<li><code>a.sub(b, c)</code> 把 a 中的第一个 b 换成 c。</li>
+<li><code>a.sub(regex, b)</code> 功能同上，匹配换成了<a href="https://www.cnblogs.com/liuzimingc/p/18008730/regex">正则表达式</a>。</li>
+<li><code>a.gsub(b, c)</code> 把 a 中的所有 b 换成 c（global）。</li>
+<li><code>a.match(regex)</code> 查找 a 中第一个符合 regex 的字符串。</li>
+<li><code>a.match(regex, pos)</code> 查找 a 中从第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>o</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">pos</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span></span></span></span> 位开始第一个符合 regex 的字符串。</li>
+</ul>
+<h2 id="conditions-and-loops-control-structures-in-ruby">Conditions and Loops: Control Structures in Ruby</h2>
+<h3 id="boolean-expressions-in-ruby">Boolean Expressions in Ruby</h3>
+<pre><code class="language-plain">== &gt; &lt; &gt;= &lt;= || &amp;&amp; !
+</code></pre>
+<p>就讲了这个。和 C++ 一样。</p>
+<h3 id="the-ifelse-construct">The if..else construct</h3>
+<p>if-else 语句。</p>
+<pre><code class="language-ruby">if (conditional-expression)  
+  # code if condition is true  
+else   
+  # code if condition is false  
+end 
+</code></pre>
+<p>if-elsif-else 语句。</p>
+<pre><code class="language-ruby">if (condition-expression1)   
+  # code if above condition is true  
+elsif (condition-expression2)  
+  # code if above condition is true  
+elsif (condition-expression3)   
+  # code if above condition is true  
+...  
+else   
+  # code if all the conditions are false  
+end  
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+</blockquote>
+<p><u><strong>Exercise.</strong></u></p>
+<p>给出一个人的 BMI。根据</p>
+<img src="https://www.cdc.gov/healthyweight/images/assessing/bmi-adult-fb-600x315.jpg?_=07167">
+<p>计算输出结果。</p>
+<hr>
+<p><u><strong>Solution.</strong></u></p>
+<p>按上述格式来就行。</p>
+<pre><code class="language-ruby">BMI = 114514
+if BMI &lt; 18.5
+  puts &quot;underweight&quot;
+elsif BMI &lt; 25
+  puts &quot;normal&quot;
+elsif BMI &lt; 30
+  puts &quot;overweight&quot;
+elsif BMI &lt; 35
+  puts &quot;obese&quot;
+else
+  puts &quot;extremely obese&quot;
+end
+# 这个图取等有点迷，大概这样就行 
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+</blockquote>
+<p>以及 <code>unless x</code> 就是 <code>if !x</code>。除了 <code>false</code> 和 <code>nil</code> 以外的对象都是 true。</p>
+<pre><code class="language-ruby">if 0
+  puts &quot;Hey, 0 is considered to be a truth in Ruby&quot; 
+end
+</code></pre>
+<h3 id="loops-in-ruby">Loops in Ruby</h3>
+<p>无限循环（C++ 中的 <code>while (true)</code>）：</p>
+<pre><code class="language-ruby">loop do
+  # do something
+end
+</code></pre>
+<p>执行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 次：</p>
+<pre><code class="language-ruby">n.times do
+  # do something
+end
+</code></pre>
+<p>从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 加到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 的两种写法：</p>
+<pre><code class="language-ruby">i = 1
+sum = 0
+loop do
+  sum += i
+  i += 1
+  if i &gt; 100
+    break # 注意 break
+  end
+end
+puts sum
+</code></pre>
+<pre><code class="language-ruby">i = 1
+sum = 0
+100.times do
+  sum += i
+  i += 1
+end
+puts sum
+</code></pre>
+<h2 id="conditions-and-loops-control-structures-in-ruby-2">Conditions and Loops: Control Structures in Ruby</h2>
+<h3 id="introduction-to-arrays">Introduction to Arrays</h3>
+<p>创建空数组：<code>[]</code> 或 <code>Array.new</code>。</p>
+<p>创建数组：直接写 <code>[A, B, ..., Z]</code>。如 <code>[1, 3.14, &quot;interesting&quot;]</code>。</p>
+<p>按下标访问，如果是非负数就是正序，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 开始；负数则是倒序，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span> 开始。下面两个输出一样：</p>
+<pre><code class="language-ruby">puts [1, 2, 3, 4, 5][-1]
+puts [1, 2, 3, 4, 5].last
+</code></pre>
+<p>添加元素：用 <code>&lt;&lt;</code> 或者 <code>push</code>。观察输出：</p>
+<pre><code class="language-ruby">list = [1, 2, 3, 4, 5]
+list &lt;&lt; 6
+puts list
+list.push(7)
+puts list
+</code></pre>
+<h3 id="basic-array-operations">Basic Array Operations</h3>
+<p>用 <code>map</code> 或者 <code>collect</code> 改变数组的值。如：</p>
+<pre><code class="language-ruby">puts [1, 2, 3, 4, 5].map { |i| i + 1 }
+</code></pre>
+<p>输出是：</p>
+<pre><code class="language-text">2
+3
+4
+5
+6
+</code></pre>
+<p>用 <code>select</code>  选出满足条件的元素。</p>
+<pre><code class="language-ruby">puts [1, 2, 3, 4, 5, 6].select { |number| number % 2 == 0 } # the output is obvious
+</code></pre>
+<p>用 <code>delete</code> 删除元素。如 <code>[1, 2, 3].delete(3)</code> 就是删除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 这个元素。</p>
+<p>用 <code>delete_if</code> 删除满足条件的元素。下面的代码和上面的输出一样：</p>
+<pre><code class="language-ruby">puts [1, 2, 3, 4, 5, 6].delete_if { |number| number % 2 == 1 } # the output is the same
+</code></pre>
+<h3 id="iteration">Iteration</h3>
+<p>存在 for 循环，但是很少用。</p>
+<pre><code class="language-ruby">array = [1, 2, 3, 4, 5]
+for i in array
+  puts i
+end
+</code></pre>
+<p>更常见的是 each 循环，<code>Array#each</code> 方法接受一个块，数组的每个元素依次传递到该块。</p>
+<pre><code class="language-ruby">array = [1, 2, 3, 4, 5]
+array.each do |i|
+  puts i
+end
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+</blockquote>
+<p><u><strong>Exercise.</strong></u></p>
+<p>把数组里的偶数变成其两倍放到另一个数组中。</p>
+<p><u><strong>Solution.</strong></u></p>
+<pre><code class="language-ruby">a = [1, 2, 3, 4, 5, 6]
+b = []
+a.each do |i|
+  if i % 2 == 0
+    b &lt;&lt; i * 2
+  end
+end
+puts b
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+</blockquote>
+<h2 id="hashes-in-ruby">Hashes in Ruby</h2>
+<h3 id="introduction-to-ruby-hashes">Introduction to Ruby Hashes</h3>
+<p>用 <code>{}</code> 创建哈希表，形如：</p>
+<pre><code class="language-ruby">student_ages = {
+    &quot;kami&quot; =&gt; 10,
+    &quot;ZuoLe&quot; =&gt; 12,
+    &quot;Bob&quot; =&gt; 14
+}
+</code></pre>
+<p>用 <code>[]</code> 访问或者修改，和 C++ map 一样。</p>
+<pre><code class="language-ruby">student_ages = {
+    &quot;kami&quot; =&gt; 10,
+    &quot;ZuoLe&quot; =&gt; 12,
+    &quot;Bob&quot; =&gt; 14
+}
+student_ages[&quot;Bob&quot;] = -1 # has dropped out，显然你也可以 student_ages.delete(&quot;Bob&quot;)
+student_ages[&quot;liuzimingc&quot;] = 14 # a new student
+</code></pre>
+<h3 id="hashes-in-and-out">Hashes, in and out.</h3>
+<p>一样可以使用 each 遍历哈希表。但是块里面要传两个值，key 和 value。</p>
+<pre><code class="language-ruby">restaurant_menu = { &quot;Ramen&quot; =&gt; 3, &quot;Dal Makhani&quot; =&gt; 4, &quot;Coffee&quot; =&gt; 2 }
+restaurant_menu.each do | item, price |
+  puts &quot;#{item}: $#{price}&quot;
+end
+</code></pre>
+<p>单独拿出 keys &amp; values 也很简单。</p>
+<pre><code class="language-ruby">restaurant_menu = { &quot;Ramen&quot; =&gt; 3, &quot;Dal Makhani&quot; =&gt; 4, &quot;Coffee&quot; =&gt; 2 }
+puts restaurant_menu.keys
+puts restaurant_menu.values # obvious
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#introduction-to-ruby-objects">Introduction To Ruby Objects</a>
+<ul>
+<li><a href="#introduction-to-objects">Introduction to Objects</a></li>
+<li><a href="#more-objects-and-methods">More Objects and Methods</a></li>
+<li><a href="#syntactic-sugar-for-special-methods">Syntactic Sugar for Special Methods</a></li>
+</ul>
+</li>
+<li><a href="#introduction-to-strings">Introduction to Strings</a>
+<ul>
+<li><a href="#introduction-to-strings-2">Introduction to Strings</a></li>
+<li><a href="#string-basics">String Basics</a></li>
+<li><a href="#advanced-string-operations">Advanced String Operations</a></li>
+</ul>
+</li>
+<li><a href="#conditions-and-loops-control-structures-in-ruby">Conditions and Loops: Control Structures in Ruby</a>
+<ul>
+<li><a href="#boolean-expressions-in-ruby">Boolean Expressions in Ruby</a></li>
+<li><a href="#the-ifelse-construct">The if..else construct</a></li>
+<li><a href="#loops-in-ruby">Loops in Ruby</a></li>
+</ul>
+</li>
+<li><a href="#conditions-and-loops-control-structures-in-ruby-2">Conditions and Loops: Control Structures in Ruby</a>
+<ul>
+<li><a href="#introduction-to-arrays">Introduction to Arrays</a></li>
+<li><a href="#basic-array-operations">Basic Array Operations</a></li>
+<li><a href="#iteration">Iteration</a></li>
+</ul>
+</li>
+<li><a href="#hashes-in-ruby">Hashes in Ruby</a>
+<ul>
+<li><a href="#introduction-to-ruby-hashes">Introduction to Ruby Hashes</a></li>
+<li><a href="#hashes-in-and-out">Hashes, in and out.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1246b2ab9d24b0d1609e',
+    clientSecret: 'ff052bad755e0dcb31ba0a4063472bbfea6efe01',
+    repo: 'liuzimingc.github.io',
+    owner: 'liuzimingc',
+    admin: ['liuzimingc'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Wish you happy every day~
+  <a class="rss" href="https://liuzimingc.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
